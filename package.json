@@ -1,0 +1,30 @@
+{
+  "name": "cypresslearning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run",
+    "executeTest": "npx cypress run --spec cypress\\e2e\\Window_TabExample.cy.js --headed --browser chrome",
+    "cypress:chrome": "npx cypress run --spec cypress\\e2e\\A*.cy.js --headed --browser chrome",
+    "cypress:edge": "npx cypress run --spec cypress\\e2e\\A*.cy.js --headed --browser edge",
+    "cypress:runDefault": "npx cypress run --spec cypress\\e2e\\A*.cy.js --headed",
+    "cypress:runChromeHeadlessDashboard": "npx cypress run --spec cypress\\e2e\\A*.cy.js --headed --browser chrome --record  --key ",
+    "cy:run": "cypress run",
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress\\e2e\\A* "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.3",
+    "cypress": "^12.2.0",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "cypress-parallel": "^0.11.0"
+  }
+}
