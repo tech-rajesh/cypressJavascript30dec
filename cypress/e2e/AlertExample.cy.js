@@ -41,6 +41,26 @@ describe('Alert Example ', function () {
 
     })
 
+    it('Alert Example - Simple Alert -validate alert Text  --newly added', function () {
+        cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
+
+        //generate an alert --- click on 
+        cy.get('button[onclick="jsAlert()"]').click()
+
+       
+        //get the text from alert
+
+        cy.on('window:alert', ( alert) => {
+
+            expect(alert).to.contains('I am a JS Alert')
+
+        })
+
+        //validation step
+        cy.get('#result').should('have.text', 'You successfully clicked an alert')
+
+    })
+
     it('ALert Example - confirm Alert - cancel button', function () {
         cy.visit('https://the-internet.herokuapp.com/javascript_alerts')
 
